@@ -9,7 +9,7 @@ ${sessionScope.messageAccount}
 		<table>
 			<tr>
 				<td>User ID:</td>
-				<td><input type="text" name="username"/></td>
+				<td><input type="text" name="username" id="username" onblur="usernameIsExist()"/></td>
 			</tr>
 			<tr>
 				<td>New password:</td>
