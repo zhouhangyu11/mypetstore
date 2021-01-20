@@ -10,6 +10,7 @@ ${sessionScope.messageAccount}
 			<tr>
 				<td>User ID:</td>
 				<td><input type="text" name="username" id="username" onblur="usernameIsExist()"/></td>
+				<td><span id="isExistInfo"></span></td>
 			</tr>
 			<tr>
 				<td>New password:</td>
@@ -31,6 +32,34 @@ ${sessionScope.messageAccount}
 		<%@ include file="IncludeAccountFields.jsp"%>
 		<input type="submit" name="newAccount" value="Save Account Information" />
 	</form>
+
+	<script>
+		var xhr;
+		function usernameIsExist() {
+			var username = document.getElementById('username').value;
+			xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=process;
+			xhr.open("GET","usernameIsExist?username="+username,true);
+			xhr.send(null);
+		}
+		function process() {
+			if(xhr.readyState==4){
+				if(xhr.status==200){
+					var responseInfo = xhr.responseText;
+					var msg = document.getElementById('isExistInfo');
+					if(responseInfo=='Exist'){
+						msg.classList.add('okmsg');
+						msg.innerText='用户名可用';
+					}
+					else if(responseInfo=='Not Exist'){
+						msg.classList.add('errormsg');
+						msg.innerText='用户名不可用';
+					}
+				}
+			}
+		}
+	</script>
 </div>
+
 
 <%@ include file="../common/IncludeBottom.jsp"%>
