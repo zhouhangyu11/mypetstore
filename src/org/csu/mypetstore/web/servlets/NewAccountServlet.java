@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class NewAccountServlet extends HttpServlet {
     private static final String MAIN = "/WEB-INF/jsp/catalog/Main.jsp";
@@ -56,8 +57,23 @@ public class NewAccountServlet extends HttpServlet {
         String listOption = request.getParameter("listOption");
         String bannerOption = request.getParameter("bannerOption");
 
+
+        //还未成功
         account1 = new Account();
         account1.setUsername(username);
+        accountService = new AccountService();
+        response.setContentType("text/plain");
+        PrintWriter out = response.getWriter();
+        if(accountService.getAccount(account1.getUsername())!=null){
+            out.print("Exist");
+        }
+        else{
+            out.print("Not Exist");
+        }
+        out.flush();
+        out.close();
+
+
         account1.setPassword(password);
         account1.setFirstName(firstName);
         account1.setLastName(lastName);
