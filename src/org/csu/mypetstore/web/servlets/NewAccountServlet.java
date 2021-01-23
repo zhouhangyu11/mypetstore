@@ -58,20 +58,20 @@ public class NewAccountServlet extends HttpServlet {
         String bannerOption = request.getParameter("bannerOption");
 
 
-        //还未成功
-        account1 = new Account();
-        account1.setUsername(username);
-        accountService = new AccountService();
-        response.setContentType("text/plain");
-        PrintWriter out = response.getWriter();
-        if(accountService.getAccount(account1.getUsername())!=null){
-            out.print("Exist");
-        }
-        else{
-            out.print("Not Exist");
-        }
-        out.flush();
-        out.close();
+//        //还未成功
+//        account1 = new Account();
+//        account1.setUsername(username);
+//        accountService = new AccountService();
+//        response.setContentType("text/plain");
+//        PrintWriter out = response.getWriter();
+//        if(accountService.getAccount(account1.getUsername())!=null){
+//            out.print("Exist");
+//        }
+//        else{
+//            out.print("Not Exist");
+//        }
+//        out.flush();
+//        out.close();
 
 
         account1.setPassword(password);
