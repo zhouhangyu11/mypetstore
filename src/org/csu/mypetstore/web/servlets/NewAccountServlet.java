@@ -57,9 +57,8 @@ public class NewAccountServlet extends HttpServlet {
         String listOption = request.getParameter("listOption");
         String bannerOption = request.getParameter("bannerOption");
 
-
-
-
+        account1 = new Account();
+        account1.setUsername(username);
         account1.setPassword(password);
         account1.setFirstName(firstName);
         account1.setLastName(lastName);

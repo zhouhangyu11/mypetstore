@@ -265,4 +265,13 @@
         <servlet-name>LogServlet</servlet-name>
         <url-pattern>/logServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UsernameExistServlet</servlet-name>
+        <servlet-class>org.csu.mypetstore.web.servlets.UsernameExistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsernameExistServlet</servlet-name>
+        <url-pattern>/usernameExist</url-pattern>
+    </servlet-mapping>
 </web-app>
