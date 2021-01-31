@@ -23,7 +23,7 @@
     <meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="Pragma" content="no-cache" />
 
-<%--    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>--%>
+    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
