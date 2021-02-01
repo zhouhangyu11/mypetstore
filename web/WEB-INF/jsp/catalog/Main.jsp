@@ -1,5 +1,6 @@
 
 <%@include file="../common/IncludeTop.jsp"%>
+<script type="text/javascript" src="js/mouseEvent.js"></script>
 <div id="Welcome">
     <div id="WelcomeContent">
         Welcome to MyPetStore!
@@ -24,19 +25,26 @@
         </div>
     </div>
 
-    <div id="MainImage">
-        <div id="MainImageContent">
+
+
+        <div id="MainImageContent" style="display: inline-block">
             <!--中间显示栏-->
             <map name="estoremap">
-                <area alt="Birds" coords="72,2,280,250" href="viewCategory?categoryId=BIRDS" shape="rect" />
-                <area alt="Fish" coords="2,180,72,250" href="viewCategory?categoryId=FISH" shape="rect" />
-                <area alt="Dogs" coords="60,250,130,320" href="viewCategory?categoryId=DOGS" shape="rect" />
-                <area alt="Reptiles" coords="140,270,210,340" href="viewCategory?categoryId=REPTILES" shape="rect" />
-                <area alt="Cats" coords="225,240,295,310" href="viewCategory?categoryId=CATS" shape="rect" />
-                <area alt="Birds" coords="280,180,350,250" href="viewCategory?categoryId=BIRDS" shape="rect" />
+                <area alt="BIRDS" coords="72,2,280,250" href="viewCategory?categoryId=BIRDS" shape="rect"
+                      onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/>
+                <area alt="FISH" coords="2,180,72,250" href="viewCategory?categoryId=FISH" shape="rect"
+                      onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/>
+                <area alt="DOGS" coords="60,250,130,320" href="viewCategory?categoryId=DOGS" shape="rect"
+                      onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/>
+                <area alt="REPTILES" coords="140,270,210,340" href="viewCategory?categoryId=REPTILES" shape="rect"
+                      onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/>
+                <area alt="CATS" coords="225,240,295,310" href="viewCategory?categoryId=CATS" shape="rect"
+                      onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/>
+                <area alt="BIRDS" coords="280,180,350,250" href="viewCategory?categoryId=BIRDS" shape="rect"
+                      onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/>
             </map>
             <img height="355" src="images/splash.gif" align="middle" usemap="#estoremap" width="350" />
         </div>
-    </div>
+    <div id="inform" style="display: none"></div>
     <div id="Separator">&nbsp;</div>
 <%@include file="../common/IncludeBottom.jsp"%>

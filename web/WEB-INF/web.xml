@@ -283,4 +283,13 @@
         <servlet-name>AutoCompleteServlet</servlet-name>
         <url-pattern>/autoComplete</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <servlet-class>org.csu.mypetstore.web.servlets.CategoryShowJsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <url-pattern>/categoryShowJsServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
