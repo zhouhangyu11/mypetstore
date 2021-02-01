@@ -19,7 +19,7 @@ function processResponse() {
             inform.style.tableLayout
             inform.style.display = "inline-block";
             inform.style.backgroundColor = "rgb(147,112,219,0.1)";
-            inform.style.color = "rgb(176,196,222)";
+            inform.style.color = "rgb(0,205,205)";
         }
     }
 }

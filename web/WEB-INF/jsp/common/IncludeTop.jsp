@@ -98,7 +98,7 @@
             </c:if>
             <img align="middle" src="images/separator.gif" />
             <!--暂未提供-->
-            <a href="../help.html">?</a>
+            <a href="">?</a>
         </div>
     </div>
 

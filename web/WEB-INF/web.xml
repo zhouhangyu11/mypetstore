@@ -11,6 +11,8 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     -->
+
+
     <servlet>
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>org.csu.mypetstore.web.servlets.MainServlet</servlet-class>
