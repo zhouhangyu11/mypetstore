@@ -24,6 +24,8 @@
     <meta http-equiv="Pragma" content="no-cache" />
 
     <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
 </head>
 
 <body>
@@ -64,8 +66,8 @@
         <div id="SearchContent">
             <!--搜索栏目-->
             <form action="searchProduct" method="post">
-                <input type="text" name="keyword" size="14" />
-                <input type="submit" name="searchProducts" value="Search" />
+                <input type="text" name="keyword" size="14" id="keyword"/>
+                <input type="submit" name="searchProducts" value="Search" id="searchProducts"/>
             </form>
         </div>
     </div>

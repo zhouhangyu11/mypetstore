@@ -274,4 +274,13 @@
         <servlet-name>UsernameExistServlet</servlet-name>
         <url-pattern>/usernameExist</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AutoCompleteServlet</servlet-name>
+        <servlet-class>org.csu.mypetstore.web.servlets.AutoCompleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AutoCompleteServlet</servlet-name>
+        <url-pattern>/autoComplete</url-pattern>
+    </servlet-mapping>
 </web-app>
