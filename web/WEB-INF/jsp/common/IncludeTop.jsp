@@ -11,6 +11,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+
+
 <head>
     <link rel="StyleSheet" href="css/jpetstore.css" type="text/css" media="screen" />
 
@@ -29,6 +31,44 @@
 </head>
 
 <body>
+
+<script>
+    $().ready(function () {
+        var $keyword = $("#keyword");
+        $keyword.on("keyup",function () {
+            var text = $keyword.val();
+            console.log("输入框为"+$keyword.val());
+
+            if(text==''){//如果输入框为空不输出
+                // console.log("搜索框为空")
+            }else{//如果不为空则从数据库中寻找结果
+                $.ajax({
+                    type:"GET",
+                    url:"autoComplete",
+                    data:{"keyword":$keyword.val()},
+                    dataType:"json",
+                    success:function (data) {
+                        if(typeof (data)=='string'){
+                            var stringObj = function (data) {
+                                return eval("("+data+")");
+                            }
+                            alert(stringObj);
+                            console.log(stringObj);
+                        }
+                        var searchResult = new Array();
+                        for(var i=0;i<data.length;i++){
+                            searchResult[i]=data[i].name;
+                            // console.log(searchResult[i]);
+                        }
+                        $keyword.autocomplete({
+                           source:searchResult
+                        });
+                    }
+                })
+            }
+        });
+    });
+</script>
 
 <div id="Header">
 
