@@ -3,35 +3,24 @@
 ${sessionScope.messageAccount}
 
 <script>
-    // var xhr;
-    // function checkUsername() {
-    //     var username = document.getElementById("username").value;
-    //     xhr=new XMLHttpRequest();
-    //     xhr.onreadystatechange=fun1;
-    //     xhr.open("GET","usernameExist?username="+username,true);
-    //     xhr.send(null);
-    // }
-    // function fun1() {
-    //     if(xhr.readyState===4){
-    //         if(xhr.status===200){
-    //             var tips = document.getElementById("usrrnameTips");
-    //             var responseInfo = xhr.responseText;
-    //             if(responseInfo==='Exist'){//用户名存在
-    //                 tips.className = 'errormsg';
-    //                 tips.innerText = "Unavailable"
-    //             }
-    //             else if(responseInfo=='Not Exist'){//用户名不存在
-    //                 tips.className = 'okmsg';
-    //                 tips.innerText = "Available"
-    //             }
-    //         }
-    //     }
-    // }
-
 	$(function () {
 		$('#username').on('blur',function () {
-			console.log(this.value);
-		})
+			$.ajax({
+				type      :"GET",
+				url       :"usernameExist?username="+this.value,
+				success   :function (data) {
+
+					// console.log(data);
+					// console.log(data.code);
+
+					if(data.msg==='Exist'){
+						$('#usernameTips').attr("class","errormsg").text('Invalid');
+					}else if(data.msg==='Not Exist'){
+						$('#usernameTips').attr("class","okmsg").text('Available');
+					}
+				}
+			});
+		});
 	});
 
 </script>
@@ -45,7 +34,7 @@ ${sessionScope.messageAccount}
 				<td>User ID:</td>
 				<td>
                     <input type="text" name="username" id="username" >
-                    <span id="usrrnameTips"></span>
+                    <span id="usernameTips"></span>
                 </td>
 			</tr>
 			<tr>
