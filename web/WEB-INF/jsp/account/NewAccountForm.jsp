@@ -24,6 +24,23 @@ ${sessionScope.messageAccount}
 	});
 
 </script>
+<script>
+	function validate() {
+			var password = document.getElementById("password").value;
+			var repeatedPassword = document.getElementById("repeatedPassword").value;
+
+			var tips = document.getElementById("passwordTips");
+			if(password==repeatedPassword){
+				tips.className='okmsg';
+				tips.innerText="Correct Password"
+			}
+			else if(password!=repeatedPassword){
+				tips.className='errormsg';
+				tips.innerText="Different Password!"
+			}
+
+	}
+</script>
 
 <div id="Catalog">
 	<form action="newAccount" method="post">
@@ -39,11 +56,13 @@ ${sessionScope.messageAccount}
 			</tr>
 			<tr>
 				<td>New password:</td>
-				<td><input type="text" name="password" /></td>
+				<td><input type="text" name="password" id="password" onkeyup="validate()"/></td>
 			</tr>
 			<tr>
 				<td>Repeat password:</td>
-				<td><input type="text" name="repeatedPassword" /></td>
+				<td><input type="text" name="repeatedPassword" id="repeatedPassword" onkeyup="validate()"/>
+					<span id="passwordTips"></span>
+				</td>
 			</tr>
 			<tr>
 				<td>VerificationCode:</td>
