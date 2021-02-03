@@ -2,7 +2,7 @@
 
 <div id="Catalog">
 	<form action="conFirmOrderForm" method="post">
-	    <table>
+		<table>
 			<tr>
 				<th colspan=2>Payment Details</th>
 			</tr>
@@ -84,7 +84,7 @@
 			<tr>
 				<td colspan=2>
 					<input type="checkbox" name="shippingAddressRequired"/>
-				    Ship to different address...
+					Ship to different address...
 				</td>
 			</tr>
 		</table>
